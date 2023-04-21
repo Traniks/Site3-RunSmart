@@ -3,8 +3,13 @@
     font-size: 30px;
     font-weight: 700;
     text-align: center;
-    line-height: 26px;
+    line-height: normal;
     text-transform: uppercase;
+    &_left {
+        color: #ffffff;
+        font-size: 36px;
+        text-align: left;
+    }
 }
 
 @media (max-width: 500px) {
