@@ -1,0 +1,21 @@
+@import "media/promo";
+@import "media/advantages";
+@import "media/consultation";
+
+@media (max-width: 1100px) {
+    .container {
+        max-width: 900px;
+        margin: 0 100px;
+    }
+}
+@media (max-width: 900px) {
+    .container {
+        margin: 0 50px;
+    }
+}
+@media (max-width: 576px) {
+    .container {
+        margin: 0 20px;
+    }
+}
+

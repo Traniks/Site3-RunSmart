@@ -1,0 +1,41 @@
+@media (max-width: 1000px) {
+    .advantages {
+        &__item {
+            width: 200px;
+        }
+    }
+}
+@media (max-width:800px) {
+    .advantages {
+        padding: 50px 0 50px 0;
+        &__wrapper {
+            margin-top: 45px;
+        }
+        &__item {
+            width: 175px;
+            span {
+                margin: 20px 0 14px 0;
+                font-size: 16px;
+            }
+        }
+    }
+}
+@media (max-width:700px) {
+    .advantages {
+        &__wrapper {
+            display: block;
+        }
+        &__item {
+            margin: 0 auto;
+            width: 240px;
+            margin-bottom: 20px;
+            span {
+                margin: 38px 0 26px 0;
+                font-size: 18px;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
