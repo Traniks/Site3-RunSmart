@@ -37,16 +37,27 @@
 }
 @media (max-width: 560px) {
     .consultation {
-        &__wrapper {
-
-        }
+        min-height: 470px;
+        padding: 50px 0 65px 0;
         &__title {
-
+            font-size: 19px;
         }
         &__descr {
             &_hidden {
-
+                font-size: 13px;
             }
+        }
+        &__feed-form {
+            margin-top: 30px;
+            width: 280px;
+            input {
+                height: 45px;
+            }
+        }
+        .button_submit {
+            width: 280px;
+            height: 45px;
+            font-size: 14px;
         }
     }
 }
@@ -72,7 +83,6 @@
         .button_submit {
             width: 265px;
             height: 45px;
-            font-size: 14px;
         }
     }
 }
