@@ -15,6 +15,11 @@
 }
 @media (max-width: 576px) {
     .container {
+        margin: 0 35px;
+    }
+}
+@media (max-width: 420px) {
+    .container {
         margin: 0 20px;
     }
 }
