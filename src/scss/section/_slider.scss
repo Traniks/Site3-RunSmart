@@ -31,22 +31,19 @@
         }
     }
     .tns-nav {
-        width: 90px;
-        height: 24px;
-        display: block;
-        margin: 0 auto;
-        padding: 4px 0;
+        text-align: center;
+        margin: 10px 0;
         button {
-            margin: 0 5px;
+            width: 9px;
+            height: 9px;
             padding: 0;
-            border: none;
-            width: 20px;
-            height: 20px;
-            border-radius: 100%;
-            background-color: red;
+            margin: 0 5px;
+            border-radius: 50%;
+            background-color: #ddd;
+            border: 0;
         }
         .tns-nav-active {
-            background-color: blue;
+            background-color: #999;
         }
     }
 }
