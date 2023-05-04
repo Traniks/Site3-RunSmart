@@ -1,0 +1,37 @@
+@media (max-width: 1100px) {
+    .catalog {
+        &__content {
+            justify-content: space-evenly;
+        }
+        &-item {
+            &:nth-child(n+1) {
+                margin-bottom: 20px;
+            }
+            &:nth-child(n+5) {
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
+@media (max-width: 700px) {
+    .catalog {
+        &__menu-item {
+            font-size: 16px;
+        }
+        &-item {
+            &:nth-child(n+1) {
+                margin-bottom: 20px;
+            }
+            &:nth-child(n+6) {
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
+@media (max-width: 420px) {
+    .catalog {
+        &__menu-item {
+            font-size: 16px;
+        }
+    }
+}

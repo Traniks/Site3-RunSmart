@@ -3,6 +3,7 @@
     padding-bottom: 100px;
     &__menu {
         margin: 70px auto 0 auto;
+        padding: 0;
         list-style-type: none;
         display: flex;
         justify-content: center;
@@ -48,5 +49,8 @@
     }
     &-item {
         margin-bottom: 20px;
+        &:nth-child(n+4) {
+            margin-bottom: 0;
+        }
     }
 }
