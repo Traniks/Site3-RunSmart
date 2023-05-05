@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         controls: false,
         nav: true,
         navPosition: "bottom",
-        autoHeight: true
+        autoHeight: true,
     });
     document.querySelector(".prev").addEventListener("click", function() {
         slider.goTo("prev");
