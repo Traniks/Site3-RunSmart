@@ -1,6 +1,11 @@
 @media (max-width: 920px) {
     .slider {
         padding: 50px 0 50px 0;
+        &__inner {
+            img {
+                width: 100%;
+            }
+        }
         .prev {
             display: none;
         }

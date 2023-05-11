@@ -40,7 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".next").addEventListener("click", function() {
         slider.goTo("next");
     });
-
+    // tiny-slider end
+    // catalog
     $('ul.catalog__menu').on('click', 'li:not(.active)', function() {
         $(this)
             .addClass('catalog__menu-item_active').siblings().removeClass('catalog__menu-item_active')
@@ -59,5 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     toggleClass('.catalog-item__link');
     toggleClass('.catalog-item__back');
+    
+    // catalog end
 });
 
