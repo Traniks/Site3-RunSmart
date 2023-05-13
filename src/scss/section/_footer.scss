@@ -1,6 +1,11 @@
 .footer {
     height: 630px;
     position: relative;
+    &__map {
+        iframe {
+            display: block;
+        }
+    }
     &__info {
         position: absolute;
         top: 0;
@@ -18,6 +23,7 @@
         font-weight: 500;
         text-align: center;
         line-height: 19px;
+        margin: 0;
     }
     &__info-tel {
         display: block;

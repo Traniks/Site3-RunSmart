@@ -1,0 +1,54 @@
+@media (max-width: 1150px) {
+    .footer {
+        &__info {
+            width: 350px;
+            height: 220px;
+            padding: 25px 30px 25px 30px;
+        }
+        &__info-addr {
+            font-size: 17px;
+        }
+        &__wrapper {
+
+        }
+        &__social {
+
+        }
+    }
+}
+@media (max-width: 1050px) {
+    .footer {
+        &__map {
+
+        }
+    }
+}
+@media (max-width: 420px) {
+    .footer {
+        height: 500px;
+        &__info {
+            width: 220px;
+            height: 150px;
+            padding: 15px 20px 15px 20px;
+        }
+        &__info-addr {
+            font-size: 11px;
+        }
+        &__info-tel {
+            margin-top: 13px;
+            font-size: 13px;
+        }
+        &__wrapper {
+            margin: 16px auto 0;
+            width: 140px;
+            height: 40px;
+        }
+        &__social {
+            width: 35px;
+            height: 35px;
+            img {
+                height: 17px;
+            }
+        }
+    }
+}

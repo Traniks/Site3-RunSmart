@@ -62,5 +62,14 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleClass('.catalog-item__back');
     
     // catalog end
+    
+
+    // const map = document.querySelector("#mapDiv > div > div > div:nth-child(5) > div");
+    
+        
+    // setInterval(()=> {
+    //     map.style.display = "none";
+    //     console.log(map);
+    // }, 1000);
 });
 
