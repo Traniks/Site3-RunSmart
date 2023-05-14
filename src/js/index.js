@@ -62,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleClass('.catalog-item__back');
     
     // catalog end
-    
 
     // const map = document.querySelector("#mapDiv > div > div > div:nth-child(5) > div");
     
@@ -71,5 +70,61 @@ document.addEventListener("DOMContentLoaded", () => {
     //     map.style.display = "none";
     //     console.log(map);
     // }, 1000);
+
+    // Modal
+
+    const cross = document.querySelectorAll(".modal__close");
+    const promo_buttons = document.querySelectorAll("[data-modal=consultation]");
+    const promo_button = document.querySelector("[data-modal=consultation]");
+    const catalog_buttons = document.querySelectorAll(".button_catalog"); 
+    const overlay = document.querySelector(".overlay");
+    const buttons = document.querySelectorAll(".button")
+
+    promo_buttons.forEach(elem => {
+       elem.addEventListener("click", () => {
+           fadeIn(".overlay");
+           fadeIn("#consultation");
+       });
+    });
+    catalog_buttons.forEach(elem => {
+        elem.addEventListener("click", () => {
+            const title = elem.parentNode.parentNode.querySelector(".catalog-item__subtitle");
+            document.querySelector("#order .modal__subtitle").textContent = `${title.textContent}`;
+            fadeIn(".overlay");
+            fadeIn("#order");
+        });
+    });
+    cross.forEach(elem => {
+        elem.addEventListener("click", () => {
+            fadeOut(".overlay");
+            fadeOut("#consultation");
+            fadeOut("#thanks");
+            fadeOut("#order");
+        });
+    });
+
+    function fadeOut(el) {
+        let opacity = 1;
+        const timer = setInterval(function() {
+            if(opacity <= 0.1) {
+                clearInterval(timer);
+                document.querySelector(el).style.display = "none";
+            }
+            document.querySelector(el).style.opacity = opacity;
+            opacity -= opacity * 0.1;
+        }, 10);
+    
+    }
+    function fadeIn(el) {
+        let opacity = 0.01;
+        document.querySelector(el).style.display = "block";
+        const timer = setInterval(function() {
+            if(opacity >= 1) {
+                clearInterval(timer);
+            }
+            document.querySelector(el).style.opacity = opacity;
+            opacity += opacity * 0.1;
+        }, 10);
+    }
 });
 
