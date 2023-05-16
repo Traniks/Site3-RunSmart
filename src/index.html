@@ -104,7 +104,7 @@
                     </div>
                     <form action="#" class="feed-form consultation__feed-form">
                         <input required name="name" placeholder="Ваше имя" type="text">
-                        <input required name="phone" placeholder="Ваш телефон" type="number">
+                        <input required name="phone" placeholder="Ваш телефон" data-tel-input  maxlength="18" type="tel"/>
                         <input required name="email" placeholder="Ваш E-mail" type="email">
         
                         <!-- <input value="заказать консультацию" type="submit" class="button consultation__button"> -->
@@ -531,12 +531,13 @@
             <div class="modal__title">Просто заполните форму заявки</div>
             <div class="modal__subtitle">и мы перезвоним вам в течении 10 минут</div>
             <form action="#" class="feed-form modal__feed-form">
-                <input required name="name" placeholder="Ваше имя" type="text">
-                <input required name="phone" placeholder="Ваш телефон" type="number">
+                <input id="input" required name="name" placeholder="Ваше имя" type="text">
+                <span></span>
+                <input required name="phone" placeholder="Ваш телефон" data-tel-input  maxlength="18" type="tel"/>
                 <input required name="email" placeholder="Ваш E-mail" type="email">
                 
                 <!-- <input value="заказать консультацию" type="submit" class="button consultation__button"> -->
-                <button class="button button_submit">заказать консультацию</button>
+                <button id="button" class="button button_submit">заказать консультацию</button>
             </form>
             <div class="modal__close">&times;</div>  
         </div>
@@ -546,7 +547,7 @@
             <div class="modal__subtitle">Пульсометр Polar FT1</div>
             <form action="#" class="feed-form modal__feed-form">
                 <input required name="name" placeholder="Ваше имя" type="text">
-                <input required name="phone" placeholder="Ваш телефон" type="number">
+                <input required name="phone" placeholder="Ваш телефон" data-tel-input  maxlength="18" type="tel"/>
                 <input required name="email" placeholder="Ваш E-mail" type="email">
                 
                 <!-- <input value="заказать консультацию" type="submit" class="button consultation__button"> -->
@@ -578,6 +579,7 @@
         <script src="js/tiny-slider.js"></script> 
         
     <!-- /tiny-slider -->    
+    <script src="js/phoneinput.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>

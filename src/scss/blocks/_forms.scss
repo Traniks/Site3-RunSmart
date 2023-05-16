@@ -16,6 +16,17 @@
             margin-bottom: 20px;
         }
     }
+    span {
+        display: none;
+        // color: #000000;
+        // font-size: 12px;
+    }
+    .valid {
+        display: none;
+    }
+    .not-valid {
+        display: block;
+    }
 }
 @media (max-width: 560px) {
     .feed-form {
