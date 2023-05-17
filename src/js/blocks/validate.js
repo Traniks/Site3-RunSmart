@@ -1,56 +1,57 @@
 function validate() {
-    let reg1 = /[A-Za-zА-Яа-яЁё]/;
-    let reg2 = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+    function validate_form(selector) {
 
-    // const input_name = document.querySelectorAll("input[name=name]");
-    // const input_email = document.querySelectorAll("input[name=email]");
-    const input_btn = document.querySelectorAll("form.feed-form button.button");
-    const btn = document.querySelector("#button");
-    const input = document.querySelector("#input");
+        const element = document.querySelector(`${selector} input`);
+        console.log(element);
 
-    // btn.addEventListener("click", function(e) {
-    //     e.preventDefault();
-    //     if(validate(reg1, input.value)) {
-        //         console.log(input.value);
-    //         console.log("Да");
-    //     } else {
-        //         console.log(input.value);
-    //         console.log("Нет");
-    //     }
-    // });
-    
-    input_btn.forEach(elem => {
-        elem.addEventListener("click", (e) => {
-            const input_name = elem.parentNode.querySelector("input[name=name]");
-            const span = elem.parentNode.querySelector("span");
-            e.preventDefault();
-            if(validate(reg1, input_name.value)) {
-                valid(input_name, span, "")
-                console.log("Да");
-                elem.removeAttribute("disabled");
-            } else {
-                notValidate(input_name, span, "Проверка не пройдена")
-                console.log("Нет");
-                elem.setAttribute("disabled", "");
+        const validate = new JustValidate(selector, 
+            {
+                errorLabelCssClass: ['error'],
             }
-        });
-    });
-
-    function validate(reg, input) {
-        console.log(reg.test(input));
-        return reg.test(input);
+        );
+    
+        validate.addField("input[name=name]", [
+            {
+                rule: 'required',
+                errorMessage: "Это поле обязательно.",
+            },
+            {
+                rule: 'customRegexp',
+                value: /[A-Za-zА-Яа-яЁё]/,
+                errorMessage: "Имя может содержать только [A-z] и [А-я]."
+            },
+            {
+                rule: 'minLength',
+                value: 1,
+                errorMessage: "Имя неможет состоять из одной буквы."
+            },
+        ]);
+        validate.addField("input[name=phone]", [
+            {
+                rule: 'required',
+                errorMessage: "Это поле обязательно.",
+            },
+            {
+                rule: 'minLength',
+                value: 17,
+                errorMessage: "Номер слишком короткий.",
+            },
+        ]);
+        validate.addField("input[name=email]", [
+            {
+                rule: 'required',
+                errorMessage: "Это поле обязательно.",
+            },
+            {
+                rule: 'email',
+                errorMessage: 'Почта должна состоять из @, .com, .ru и т.д в конце',
+            },
+        ]);
     }
 
-    function notValidate(input, elem, message) {
-        elem.classList.remove("valid");
-        elem.classList.add("not-valid");
-        elem.innerHTML = message;
-    }
-    function valid(input, elem, message) {
-        elem.classList.remove("not-valid");
-        elem.classList.add("valid");
-        elem.innerHTML = message;
-    }
+    validate_form("#form_1");
+    validate_form("#form_2");
+    validate_form("#form_3");
 }
 
 export default validate;
