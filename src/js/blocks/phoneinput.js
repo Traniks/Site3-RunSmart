@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+function phone_input() {
     var phoneInputs = document.querySelectorAll('input[data-tel-input]');
 
     var getInputNumbersValue = function (input) {
@@ -73,4 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
         phoneInput.addEventListener('input', onPhoneInput, false);
         phoneInput.addEventListener('paste', onPhonePaste, false);
     }
-})
+}
+
+export default phone_input;
+
