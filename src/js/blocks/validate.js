@@ -1,9 +1,6 @@
 function validate() {
     function validate_form(selector) {
 
-        const element = document.querySelector(`${selector} input`);
-        console.log(element);
-
         const validate = new JustValidate(selector, 
             {
                 errorLabelCssClass: ['error'],

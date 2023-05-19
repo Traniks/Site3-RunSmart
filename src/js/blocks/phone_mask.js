@@ -1,4 +1,4 @@
-function phone_input() {
+function phone_mask() {
     var phoneInputs = document.querySelectorAll('input[data-tel-input]');
 
     var getInputNumbersValue = function (input) {
@@ -75,5 +75,5 @@ function phone_input() {
     }
 }
 
-export default phone_input;
+export default phone_mask;
 
