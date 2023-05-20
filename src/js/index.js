@@ -3,7 +3,6 @@ import phone_mask from "./blocks/phone_mask.js";
 import catalog from "./blocks/catalog.js";
 import modal from "./blocks/modal_forms.js";
 import validate from "./blocks/validate.js";
-import mail from "./blocks/mail.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -12,6 +11,5 @@ document.addEventListener("DOMContentLoaded", () => {
     catalog();
     modal();
     validate();
-    mail(); 
 
 });

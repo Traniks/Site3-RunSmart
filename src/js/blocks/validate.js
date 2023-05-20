@@ -43,7 +43,27 @@ function validate() {
                 rule: 'email',
                 errorMessage: 'Почта должна состоять из @, .com, .ru и т.д в конце',
             },
-        ]);
+        ]).onSuccess((event) => {
+            console.log("Отправил форму");
+            $("form").submit(function(e) {
+                e.preventDefault();
+        
+                // if (!$(this).valid()) {
+                //     return;
+                // }
+        
+                $.ajax({
+                    type: "POST",
+                    url: "mailer/smart.php",
+                    data: $(this).serialize()
+                }).done(function() {
+                    $(this).find("input").val("");
+        
+                    $("form").trigger("reset");
+                });
+                return false;
+            });
+        });
     }
 
     validate_form("#form_1");
