@@ -36,7 +36,6 @@ function modal() {
             document.querySelector(el).style.opacity = opacity;
             opacity -= opacity * 0.1;
         }, 10);
-    
     }
     function fadeIn(el) {
         let opacity = 0.01;

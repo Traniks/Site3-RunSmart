@@ -22,7 +22,7 @@ function validate() {
                 value: 1,
                 errorMessage: "Имя неможет состоять из одной буквы."
             },
-        ]);
+        ])
         validate.addField("input[name=phone]", [
             {
                 rule: 'required',
@@ -33,7 +33,7 @@ function validate() {
                 value: 17,
                 errorMessage: "Номер слишком короткий.",
             },
-        ]);
+        ])
         validate.addField("input[name=email]", [
             {
                 rule: 'required',
@@ -43,29 +43,59 @@ function validate() {
                 rule: 'email',
                 errorMessage: 'Почта должна состоять из @, .com, .ru и т.д в конце',
             },
-        ]).onSuccess((event) => {
-            console.log("Отправил форму");
-            $("form").submit(function(e) {
-                e.preventDefault();
-        
-                // if (!$(this).valid()) {
-                //     return;
-                // }
-        
-                $.ajax({
-                    type: "POST",
-                    url: "mailer/smart.php",
-                    data: $(this).serialize()
-                }).done(function() {
-                    $(this).find("input").val("");
-        
-                    $("form").trigger("reset");
-                });
-                return false;
+        ])
+        .onSuccess((e) => {
+            e.preventDefault();
+            console.log(e);
+            $.ajax({
+                type: "POST",
+                url: "mailer/smart.php",
+                data: $(this).serialize()
+            }).done(function() {
+                $(this).find("input").val("");
+
+                console.log(document.querySelector("#consultation"));
+                console.log(document.querySelector("#order"));
+                console.log(document.querySelector(".overlay"));
+                console.log(document.querySelector("#thanks"));
+                // fadeOut(document.querySelector("#consultation"));
+                // fadeOut(document.querySelector("#order"));
+    
+                // fadeIn(document.querySelector(".overlay"));
+                // fadeIn(document.querySelector("#thanks"));
+                
+                $("form").trigger("reset");
             });
-        });
+            console.log("Отправил форму");
+
+            
+            return false;
+        })
     }
 
+    function fadeOut(el) {
+        let opacity = 1;
+        const timer = setInterval(function() {
+            if(opacity <= 0.1) {
+                clearInterval(timer);
+                document.querySelector(el).style.display = "none";
+            }
+            document.querySelector(el).style.opacity = opacity;
+            opacity -= opacity * 0.1;
+        }, 10);
+    }
+    function fadeIn(el) {
+        let opacity = 0.01;
+        document.querySelector(el).style.display = "block";
+        const timer = setInterval(function() {
+            if(opacity >= 1) {
+                clearInterval(timer);
+            }
+            document.querySelector(el).style.opacity = opacity;
+            opacity += opacity * 0.1;
+        }, 10);
+    }
+    
     validate_form("#form_1");
     validate_form("#form_2");
     validate_form("#form_3");
