@@ -46,7 +46,6 @@ function validate() {
         ])
         .onSuccess((e) => {
             e.preventDefault();
-            console.log(e);
             $.ajax({
                 type: "POST",
                 url: "mailer/smart.php",
