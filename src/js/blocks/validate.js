@@ -54,15 +54,11 @@ function validate() {
             }).done(function() {
                 $(this).find("input").val("");
 
-                console.log(document.querySelector("#consultation"));
-                console.log(document.querySelector("#order"));
-                console.log(document.querySelector(".overlay"));
-                console.log(document.querySelector("#thanks"));
-                // fadeOut(document.querySelector("#consultation"));
-                // fadeOut(document.querySelector("#order"));
+                fadeOut("#consultation");
+                fadeOut("#order");
     
-                // fadeIn(document.querySelector(".overlay"));
-                // fadeIn(document.querySelector("#thanks"));
+                fadeIn(".overlay");
+                fadeIn("#thanks");
                 
                 $("form").trigger("reset");
             });
