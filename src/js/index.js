@@ -14,4 +14,5 @@ document.addEventListener("DOMContentLoaded", () => {
     validate();
     scroll();
     
+    new WOW().init();
 });
