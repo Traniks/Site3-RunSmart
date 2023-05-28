@@ -19,7 +19,7 @@ function validate() {
             },
             {
                 rule: 'minLength',
-                value: 1,
+                value: 2,
                 errorMessage: "Имя неможет состоять из одной буквы."
             },
         ])
