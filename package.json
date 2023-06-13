@@ -1,5 +1,5 @@
 {
-  "name": "web_practice2",
+  "name": "run-smart",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Traniks/Traniks.github.io.git"
+    "url": "git+https://github.com/Traniks/run-smart"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Traniks/Traniks.github.io/issues"
+    "url": "https://github.com/Traniks/run-smart/issues"
   },
-  "homepage": "https://github.com/Traniks/Traniks.github.io#readme",
+  "homepage": "https://github.com/Traniks/run-smart#readme",
   "devDependencies": {
     "browser-sync": "^2.29.1",
     "gulp": "^4.0.2",
